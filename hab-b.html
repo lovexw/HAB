@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAB 品牌网站风格标准 · B 模块（Bitcoin）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #FAFAFA;
+            color: #222222;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+            animation: fadeInDown 0.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1A1A1A;
+        }
+
+        .card-content {
+            color: #444444;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .card-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 配色展示区 */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .color-item {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 100%;
+            height: 80px;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .color-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-hex {
+            font-size: 0.75rem;
+            color: #666666;
+        }
+
+        /* Logo 展示区 */
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .logo-display {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .logo-item {
+            text-align: center;
+        }
+
+        .logo-box {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-box.light {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+        }
+
+        .logo-box.dark {
+            background-color: #1A1A1A;
+        }
+
+        .logo-box img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .logo-label {
+            font-size: 0.875rem;
+            color: #666666;
+            margin-top: 0.5rem;
+        }
+
+        .logo-specs {
+            width: 100%;
+            max-width: 600px;
+            background: #FAFAFA;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .logo-specs h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 1rem;
+        }
+
+        .logo-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .logo-specs li {
+            color: #555555;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .logo-specs li::before {
+            content: '•';
+            color: #FF9900;
+            font-weight: bold;
+            position: absolute;
+            left: 0.5rem;
+        }
+
+        /* 示例区 */
+        .example-area {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #FF9900;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 0.625rem 1.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 153, 0, 0.25);
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #222222;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 0.625rem 1.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #FFF6E5;
+        }
+
+        .example-card {
+            border: 1px solid #E0E0E0;
+            border-radius: 16px;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            font-size: 0.875rem;
+            color: #555555;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.875rem;
+            color: #777777;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .color-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HAB 品牌网站风格标准 · B 模块（Bitcoin）</h1>
+
+        <div class="card">
+            <h2 class="card-title">1. 整体风格定位</h2>
+            <div class="card-content">
+                <p>B 模块代表 Bitcoin，象征自由、去中心化与数字秩序。网站整体风格追求极简与现代，强调几何布局与留白，配色主导为白与橙，辅以深灰与浅灰，体现信任与科技感。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">2. 品牌标识 Logo</h2>
+            <div class="card-content">
+                <div class="logo-section">
+                    <div class="logo-display">
+                        <div class="logo-item">
+                            <div class="logo-box light">
+                                <img src="https://tc.xiaowuleyi.com/file/1762677135128_bitcoin-btc-logo.svg" alt="Bitcoin Logo">
+                            </div>
+                            <div class="logo-label">浅色背景</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-box dark">
+                                <img src="https://tc.xiaowuleyi.com/file/1762677135128_bitcoin-btc-logo.svg" alt="Bitcoin Logo">
+                            </div>
+                            <div class="logo-label">深色背景</div>
+                        </div>
+                    </div>
+                    <div class="logo-specs">
+                        <h4>📋 Logo 使用规范</h4>
+                        <ul>
+                            <li>统一使用比特币标准 Logo，象征去中心化与数字资产</li>
+                            <li>所有 B 模块相关网站必须使用此 Logo 作为品牌标识</li>
+                            <li>Logo 周围保持适当留白，最小边距为 Logo 宽度的 20%</li>
+                            <li>可在浅色或深色背景上使用，保持清晰可辨识</li>
+                            <li>不得拉伸变形，保持原始比例</li>
+                            <li>建议尺寸：导航栏 32-48px，页头 64-120px</li>
+                            <li>Logo 地址：<code style="background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem;">https://tc.xiaowuleyi.com/file/1762677135128_bitcoin-btc-logo.svg</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">3. 品牌配色</h2>
+            <div class="card-content">
+                <div class="color-grid">
+                    <div class="color-item">
+                        <div class="color-box" style="background-color: #1A1A1A;"></div>
+                        <div class="color-name">primary</div>
+                        <div class="color-hex">#1A1A1A</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background-color: #FF9900;"></div>
+                        <div class="color-name">accent</div>
+                        <div class="color-hex">#FF9900</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background-color: #FAFAFA; border: 1px solid #E0E0E0;"></div>
+                        <div class="color-name">background</div>
+                        <div class="color-hex">#FAFAFA</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background-color: #222222;"></div>
+                        <div class="color-name">text</div>
+                        <div class="color-hex">#222222</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background-color: #E0E0E0;"></div>
+                        <div class="color-name">border</div>
+                        <div class="color-hex">#E0E0E0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">4. 页面风格</h2>
+            <div class="card-content">
+                <p><strong>主题：</strong>浅色极简风，留白充足，视觉层次清晰。</p>
+                <p><strong>圆角：</strong>16px 以内，统一柔和视觉。</p>
+                <p><strong>阴影：</strong>轻柔扩散型，透明度 10%-15%。</p>
+                <p><strong>排版：</strong>单列居中，标题使用粗体，大字号清晰。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">5. 交互与动效</h2>
+            <div class="card-content">
+                <p>动效应简洁且方向性明确（如滑入、淡入、缩放）。</p>
+                <p>交互色（hover/focus）以橙色为主，传递能量感。</p>
+                <p>按钮与链接的动画节奏控制在 150-250ms 内，保持自然节奏。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">6. 示例区</h2>
+            <div class="card-content">
+                <div class="example-area">
+                    <button class="btn-primary">主按钮</button>
+                    <button class="btn-secondary">次按钮</button>
+                    <div class="example-card">
+                        示例卡片：卡片内容以轻灰边框分隔，背景保持纯净白，标题与段落层次清晰。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>—— HAB · B 模块网站风格标准 ——</p>
+            <p>未来将加入 H（Health）与 A（AI）模块风格规范。</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">设计提示词 / Style Prompt</h2>
+            <div class="card-content">
+                <p>网页风格极简现代，B 模块代表 Bitcoin，自由、去中心化、秩序感。整体布局单列居中，留白充足，信息层次清晰。背景以浅色为主，元素点缀橙色，辅以深灰和浅灰，突出重点信息和按钮。</p>
+                <p>字体统一，标题粗体，正文清晰易读。按钮圆角适中，阴影轻柔，交互动画简洁快速（150-250ms），hover/focus 使用橙色点亮。页面气质理性克制，冷静、稳重，传递信任与未来感。</p>
+                <p><strong>关键词：</strong>极简｜现代｜浅色｜橙色强调｜留白｜清晰层次｜理性克制｜未来感｜比特币哲学。</p>
+                <p>此提示可用于任何AI或网页工具，复刻相同风格与逻辑。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
